@@ -1,0 +1,23 @@
+# Acme Notes
+
+> The offline-first note app for people who think in Markdown.
+
+Acme Notes is a note-taking app with Markdown, offline sync, and export. This file indexes the key
+pages for language models and AI agents. (Optional: also serve /llms-full.txt with fuller text.)
+
+## Key pages
+- [Home](https://acmenotes.example/): what Acme Notes is and who it's for
+- [Features](https://acmenotes.example/features): offline sync, Markdown, export, search
+- [Pricing](https://acmenotes.example/pricing): Free, Pro, Teams
+- [Docs](https://acmenotes.example/docs): getting started and guides
+- [Blog](https://acmenotes.example/blog): tutorials and updates
+- [About](https://acmenotes.example/about): team and company
+- [Contact](https://acmenotes.example/contact): support
+
+## Facts
+- Platform: web, macOS, Windows, iOS, Android
+- Export formats: Markdown, PDF, HTML
+- Pricing: Free tier; Pro $8/mo; Teams $12/user/mo
+
+## Contact
+support@acmenotes.example

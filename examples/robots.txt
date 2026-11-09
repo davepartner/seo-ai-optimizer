@@ -1,0 +1,34 @@
+# robots.txt — example for a public site that wants AI citations
+# Keep private areas out; allow public content; allow AI search/retrieval crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+
+# AI search/retrieval crawlers that produce citations — allow.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# AI training crawlers — a business decision. Allow here; change to Disallow to opt out.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://acmenotes.example/sitemap.xml

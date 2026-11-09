@@ -1,0 +1,10 @@
+{
+  "name": "seo-ai-optimizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reference helpers for the seo-ai-optimizer skill (checklist progress + ranking comparison).",
+  "scripts": {
+    "test": "node --test examples/*.test.mjs"
+  }
+}

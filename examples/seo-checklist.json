@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "sections": [
+    {
+      "id": "technical",
+      "title": "Technical SEO",
+      "description": "Crawlable, indexable, fast, and correctly structured.",
+      "items": [
+        { "id": "robots-txt", "title": "Publish a valid robots.txt", "why": "Tells crawlers what to fetch or skip.", "how": "Serve /robots.txt at the root; allow public pages, disallow admin/cart/private paths; link the sitemap.", "link": "https://developers.google.com/search/docs/crawling-indexing/robots/intro", "weight": 3 },
+        { "id": "xml-sitemap", "title": "Generate and submit an XML sitemap", "why": "Helps engines discover pages faster.", "how": "Generate /sitemap.xml with lastmod; reference it in robots.txt; submit in Search Console + Bing.", "link": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview", "weight": 3 },
+        { "id": "status-200", "title": "Key pages return 200 and are indexable", "why": "A blocked or erroring page cannot rank.", "how": "Crawl the site; fix 4xx/5xx on canonical pages; verify no accidental noindex.", "link": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors", "weight": 3 },
+        { "id": "canonical", "title": "Self-referencing canonical tags", "why": "Prevents duplicate-content dilution.", "how": "Each indexable page has <link rel=canonical> to itself; paginate with proper canonicals.", "link": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls", "weight": 3 },
+        { "id": "noindex-audit", "title": "Audit noindex/nofollow", "why": "Accidental noindex de-lists pages.", "how": "Grep templates for noindex; confirm only private/thin pages are excluded.", "link": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag", "weight": 3 },
+        { "id": "https", "title": "Serve everything over HTTPS", "why": "A ranking signal and a trust requirement.", "how": "Force HTTPS, redirect http→https with a single 301, fix mixed content.", "link": "https://web.dev/why-https-matters/", "weight": 3 },
+        { "id": "redirects-301", "title": "Use 301s for moved URLs; no chains", "why": "Preserves equity and avoids loops.", "how": "Map old→new with a single hop; avoid chains and redirect loops.", "link": "https://developers.google.com/search/docs/crawling-indexing/301-redirects", "weight": 3 },
+        { "id": "url-normalization", "title": "Consistent trailing slash + case", "why": "Duplicate URLs split signals.", "how": "Pick one canonical form; redirect the other; lowercase paths.", "link": "https://developers.google.com/search/docs/crawling-indexing/url-structure", "weight": 2 },
+        { "id": "mobile-friendly", "title": "Mobile-first responsive design", "why": "Google indexes the mobile version.", "how": "Responsive layout, tappable targets, no horizontal scroll.", "link": "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing", "weight": 3 },
+        { "id": "ssr-js", "title": "Server-render or prerender JS content", "why": "Crawlers may not execute heavy client JS.", "how": "Use SSR/SSG or prerender; ensure primary content is in the HTML.", "link": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics", "weight": 3 },
+        { "id": "hreflang", "title": "hreflang for multi-language sites", "why": "Serves the right locale and avoids duplicates.", "how": "Add reciprocal hreflang tags per locale; include x-default.", "link": "https://developers.google.com/search/docs/specialty/international/localized-versions", "weight": 2 },
+        { "id": "structured-data", "title": "JSON-LD structured data on key page types", "why": "Rich results + machine-readable facts for AI.", "how": "Organization, WebSite, BreadcrumbList, Article/Product, FAQPage, HowTo, LocalBusiness as relevant.", "link": "https://schema.org/", "weight": 3 },
+        { "id": "social-cards", "title": "Open Graph + Twitter card tags", "why": "Better sharing and click-through.", "how": "og:title, og:description, og:image, og:url, twitter:card.", "link": "https://ogp.me/", "weight": 1 },
+        { "id": "core-web-vitals", "title": "Core Web Vitals in the good range", "why": "A ranking signal and a real UX win.", "how": "LCP ≤2.5s, INP ≤200ms, CLS ≤0.1 at p75; optimize images, JS, fonts, server.", "link": "https://web.dev/articles/vitals", "weight": 3 },
+        { "id": "image-seo", "title": "Descriptive alt text + modern image formats", "why": "Image search + accessibility + speed.", "how": "Alt on every image, AVIF/WebP, width/height set, lazy-load below the fold.", "link": "https://developers.google.com/search/docs/appearance/google-images", "weight": 2 },
+        { "id": "soft-404", "title": "Real 404s (no soft-404s)", "why": "Soft-404s waste crawl budget and confuse users.", "how": "Return HTTP 404 for missing pages; a helpful 404 page is fine.", "link": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors", "weight": 2 }
+      ]
+    },
+    {
+      "id": "content",
+      "title": "Content & E-E-A-T",
+      "description": "Relevant, trustworthy, well-structured content.",
+      "items": [
+        { "id": "title-tags", "title": "Unique, keyword-relevant title tags", "why": "A primary ranking + CTR lever.", "how": "One <title> per page, 50–60 chars, primary keyword near the front, brand at the end.", "link": "https://developers.google.com/search/docs/appearance/title-link", "weight": 3 },
+        { "id": "meta-descriptions", "title": "Compelling meta descriptions", "why": "Improves click-through from search.", "how": "150–160 chars, includes the value + a soft CTA; unique per page.", "link": "https://developers.google.com/search/docs/appearance/snippet", "weight": 2 },
+        { "id": "h1-headings", "title": "One H1 + logical H2/H3 structure", "why": "Clarifies topic and structure.", "how": "Single H1; section headings as H2; no heading levels skipped.", "link": "https://developers.google.com/search/docs/appearance/visual-elements-gallery", "weight": 2 },
+        { "id": "keyword-intent", "title": "Map keywords to search intent", "why": "Matching intent is how you rank.", "how": "One primary intent per page; cover related questions; avoid cannibalisation.", "link": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "weight": 3 },
+        { "id": "content-depth", "title": "Answer the question completely", "why": "Thin content doesn't rank and AI won't cite it.", "how": "Cover the topic, examples, and edge cases; be specific and original.", "link": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "weight": 3 },
+        { "id": "eeat", "title": "E-E-A-T signals", "why": "Trust is a ranking factor, especially for YMYL.", "how": "Author bios, About/Contact, credentials, sources, clear ownership.", "link": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "weight": 2 },
+        { "id": "faq", "title": "FAQ section with FAQPage schema", "why": "Wins rich results and gives AI quotable answers.", "how": "Real questions users ask; concise answers; matching JSON-LD FAQPage.", "link": "https://developers.google.com/search/docs/appearance/structured-data/faqpage", "weight": 2 },
+        { "id": "fresh-content", "title": "Keep key content fresh", "why": "Recency matters for many queries.", "how": "Update dates and facts; show a visible updated date; refresh thin pages.", "link": "https://developers.google.com/search/docs/appearance/publication-dates", "weight": 1 },
+        { "id": "breadcrumbs", "title": "Breadcrumb navigation + BreadcrumbList", "why": "Improves UX and shows hierarchy to engines.", "how": "Visible breadcrumbs + matching JSON-LD.", "link": "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb", "weight": 1 },
+        { "id": "internal-links", "title": "Descriptive internal links", "why": "Spreads authority and helps discovery.", "how": "Link related pages with descriptive anchors; no 'click here'.", "link": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable", "weight": 2 },
+        { "id": "thin-content", "title": "Remove or improve thin/duplicate pages", "why": "Thin pages dilute the site.", "how": "Merge duplicates, add value, or noindex low-value pages.", "link": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "weight": 2 }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI Discovery (AEO / GEO)",
+      "description": "Be crawlable, machine-readable, and quotable by AI answer engines.",
+      "items": [
+        { "id": "allow-ai-search", "title": "Allow AI search/retrieval crawlers", "why": "These produce AI citations (OAI-SearchBot, Claude-SearchBot, PerplexityBot).", "how": "In robots.txt, allow OAI-SearchBot, Claude-SearchBot, PerplexityBot (and Googlebot/Bingbot).", "link": "https://platform.openai.com/docs/bots", "weight": 3 },
+        { "id": "ai-training-policy", "title": "Decide your AI training-crawler policy", "why": "Training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot) are a business choice.", "how": "Allow or block them explicitly in robots.txt; document the decision.", "link": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers", "weight": 2 },
+        { "id": "llms-txt", "title": "Publish /llms.txt (and /llms-full.txt)", "why": "A machine-readable index for LLMs — cheap, but not yet universally read.", "how": "List your key pages with short descriptions; don't rely on it alone.", "link": "https://llmstxt.org/", "weight": 1 },
+        { "id": "entity-schema", "title": "Clear entity + brand facts in structured data", "why": "AI needs to know who you are.", "how": "Organization/WebSite JSON-LD with name, url, logo, sameAs (social), contact.", "link": "https://schema.org/Organization", "weight": 2 },
+        { "id": "quotable-content", "title": "Write concise, quotable answers", "why": "AI cites explicit, verifiable statements.", "how": "Lead with the answer, then detail; use definitions, lists, dates, and sources.", "link": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "weight": 3 },
+        { "id": "ai-faq", "title": "Q&A / HowTo content + schema", "why": "Matches conversational queries.", "how": "FAQPage / HowTo JSON-LD; short direct answers.", "link": "https://schema.org/FAQPage", "weight": 2 },
+        { "id": "chatgpt-apps", "title": "ChatGPT Apps / MCP (if you have an app or action)", "why": "The path to the ChatGPT app directory.", "how": "Build an MCP server with the Apps SDK, then submit via the plugin portal.", "link": "https://learn.chatgpt.com/apps-sdk", "weight": 2 },
+        { "id": "ai-directories", "title": "List on AI directories / MCP registries", "why": "Discovery happens in directories too.", "how": "Submit to MCP directories and relevant AI tool lists.", "link": "https://modelcontextprotocol.io/", "weight": 1 }
+      ]
+    },
+    {
+      "id": "submissions",
+      "title": "Submissions & Verification",
+      "description": "Where to submit your site/platform. Do these once, then verify.",
+      "items": [
+        { "id": "gsc", "title": "Google Search Console", "why": "The source of truth for Google indexing + performance.", "how": "Add the property (Domain or URL prefix), verify via DNS or HTML, submit the sitemap, check Coverage/Pages.", "link": "https://search.google.com/search-console", "weight": 3 },
+        { "id": "bing", "title": "Bing Webmaster Tools", "why": "Bing powers Bing + Copilot search.", "how": "Add the site, verify, submit the sitemap, review Index/Performance.", "link": "https://www.bing.com/webmasters", "weight": 3 },
+        { "id": "indexnow", "title": "IndexNow (instant indexing)", "why": "Pushes new/updated URLs to Bing/Yandex instantly.", "how": "Generate a key, host /<key>.txt, POST URL updates to the IndexNow endpoint.", "link": "https://www.indexnow.org/", "weight": 2 },
+        { "id": "google-business", "title": "Google Business Profile (local)", "why": "Local pack visibility for physical/service businesses.", "how": "Create/claim the profile, verify, add hours, photos, categories, reviews.", "link": "https://business.google.com/", "weight": 2 },
+        { "id": "chatgpt-submit", "title": "Submit a ChatGPT App (if applicable)", "why": "Appears in the ChatGPT app directory.", "how": "Build with the Apps SDK (MCP server, OAuth, domain verification), meet the app guidelines, submit via the plugin submission portal, pass review.", "link": "https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/", "weight": 2 },
+        { "id": "mcp-directory", "title": "MCP directory / registry", "why": "Discovery for AI clients that use MCP.", "how": "Publish your MCP server metadata and link it from your docs; list in MCP registries.", "link": "https://modelcontextprotocol.io/", "weight": 1 },
+        { "id": "app-stores", "title": "Apple App Store / Google Play (if mobile)", "why": "Where mobile users find you.", "how": "Complete store listing, screenshots, keywords; follow store review policies.", "link": "https://developer.apple.com/app-store/", "weight": 1 }
+      ]
+    },
+    {
+      "id": "measurement",
+      "title": "Measurement (before / after)",
+      "description": "Prove the improvement with real data.",
+      "items": [
+        { "id": "gsc-baseline", "title": "Capture a GSC baseline", "why": "You can't show before/after without a before.", "how": "Performance → export clicks, impressions, CTR, average position (28 days); store it.", "link": "https://search.google.com/search-console/performance/search-analytics", "weight": 3 },
+        { "id": "track-metrics", "title": "Track clicks/impressions/CTR/position", "why": "Directional proof of ranking movement.", "how": "Compare snapshots with examples/ranking.mjs; watch trends, not single days.", "link": "https://developers.google.com/webmaster-tools/v1/how-tos/all-your-data", "weight": 3 },
+        { "id": "cwv-field", "title": "Core Web Vitals field data", "why": "Confirms real-user speed, not just lab.", "how": "Check the CWV report in GSC / CrUX after shipping speed fixes.", "link": "https://pagespeed.web.dev/", "weight": 2 },
+        { "id": "ai-monitor", "title": "Monitor AI citations", "why": "AEO success is being cited, not just crawled.", "how": "Periodically ask ChatGPT/Perplexity/Gemini your key questions; note brand mentions/citations.", "link": "https://chatgpt.com/", "weight": 1 },
+        { "id": "remeasure", "title": "Re-measure after improvements", "why": "Closes the loop; proves impact.", "how": "Wait for recrawl (days), export the same GSC metrics, compare with ranking.mjs, show the chart.", "link": "https://search.google.com/search-console", "weight": 3 }
+      ]
+    }
+  ]
+}
